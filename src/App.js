@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import FormMusica from './pages/FormMusica';
+import PokemonGeral from './pages/PokemonGeral';
+import Pokemon from './pages/Pokemon';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<FormMusica/>} />
+        <Route path='/pokemons' element={<PokemonGeral/>} />
+        <Route path='/:pokemon' element={<Pokemon/>} />
+      </Routes>
+    </>
   );
 }
 
